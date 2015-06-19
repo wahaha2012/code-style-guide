@@ -19,15 +19,14 @@ v1.0 |初版    |2015-06-19
 * 统一使用4个空格缩进
 * 永远不要在缩进时混用空格和制表符(tab)
 
-## 链接
+## 4.链接
 * [HTML 编码规范](./html.md)
 * [Javascript编码规范](./javascript.md)
 * [CSS 编码规范](./css.md)
 
-## 参考
+## 5.参考
 - [http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 - [http://www.w3.org/TR/DOM-Level-2-HTML/html.html](http://www.w3.org/TR/DOM-Level-2-HTML/html.html)
-
 - [hiwanz/javascript-style-reference](https://github.com/hiwanz/javascript-style-reference)
 - [dyygtfx/FeCodeGuide](https://github.com/dyygtfx/FeCodeGuide)
 - [tsq/front-end-principles](https://github.com/tsq/front-end-principles/)
