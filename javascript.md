@@ -5,15 +5,17 @@
 ## [1.声明](#declaration) 
 
 - 变量声明必须加var关键字，严格控制作用域；
-- 建议使用驼峰式命名变量和函数，如：functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis,namespaceNamesLikeThis；
-- 私有成员变量和方法命名以下划线开头，如：var _this；
-- 常量定义单词全部大写，以下划线连接，但不要用const关键字来声明，如：SOME_CONSTANTS；
+- 建议使用驼峰式命名变量和函数，如：`functionNamesLikeThis, variableNamesLikeThis, ClassNamesLikeThis,namespaceNamesLikeThis`；
+- 私有成员变量和方法命名以下划线开头，如：`var _this`；
+- 常量定义单词全部大写，以下划线连接，但不要用const关键字来声明，如：`SOME_CONSTANTS`；
 - 函数参数大于3个时，应以对象形式作为参数集传递；
-- 禁止在代码块中声明函数，错误的范例：if (true) {function foo() {}}；
-- 禁止用new来实例化**基本类型**，错误的范例：var x = new Boolean(false)；
-- 直接定义数组或对象，而不使用new关键字声明，错误的范例：var a = new Array();var o = new Object()；
+- 禁止在代码块中声明函数，错误的范例：`if (true) {function foo() {}}`；
+- 禁止用new来实例化**基本类型**，错误的范例：`var x = new Boolean(false)`；
+- 直接定义数组或对象，而不使用new关键字声明，错误的范例：`var a = new Array();var o = new Object()`；
 - 使用单引号来定义字符串；
 - 文件名必须全部用小写，文件名分隔符用**中划线**连接，版本连接符用**实心点**，合并文件的文件名连接符用**下划线**，如：passport-core.min.js和reset-1.0_utils-1.0.css；
+- 函数/方法名以动词开头，比如`function doSomething(){}`；
+- 构造函数/类名尽量是名词属性，首字母大写，后面以驼峰方式。比如`function Person(){}`；
 
 ## [2.安全](#safe)
 
@@ -95,13 +97,8 @@
     }
 ```
 
-## [9.杂项](#others)
 
-- 尽量使用优雅的模版写法，避免多行字符串用\加换行的方式或使用+运算连接字符串这种难维护的编码方式；
-- 禁止使用IE条件编译@cc_on；
-
-
-## [10.格式化代码](#format)
+## [9.格式化代码](#format)
 
 没有强制要求代码需格式化成什么样子，但尽量使代码具有较高的可读性。下面给出一些建议的代码风格：
 
@@ -154,7 +151,7 @@
 
 ```
 
-## [11.类型转换](#type)
+## [10.类型转换](#type)
 
 对于代码中需要进行==逻辑判断的变量，建议进行强制类型转换或使用===代替。
 
@@ -196,7 +193,7 @@
     {} != false
 ```
 
-## [12.注释规范](#comments)
+## [11.注释规范](#comments)
 
 文档注释遵循YUIDoc规范（[http://yui.github.io/yuidoc/syntax/](http://yui.github.io/yuidoc/syntax/)），所有的文件、类、方法和属性都应该用合适的标记和类型进行注释。
 
@@ -238,7 +235,83 @@
     };
 ```
 
-## [13.参考文档](#reference)
+## [12.杂项](#others)
+
+- 尽量使用优雅的模版写法，避免多行字符串用\加换行的方式或使用+运算连接字符串这种难维护的编码方式；
+- 禁止使用IE条件编译@cc_on；
+
+## [13.赋值](#assign)
+
+给变量赋值时，如果右侧是含有比较语句的表达式，需要用圆括号包裹。
+```javascript
+//好的方法
+var flag = (i < count);
+//不好的写法：遗漏括号
+var flag = i < count;
+```
+
+## [14.三元操作符](#ternary-operator)
+
+三元操作符应当仅仅用在条件赋值语句中，而不要作为if语句的替代品。
+```js
+//好的写法  
+var value = condition ? value1 : value2;
+
+//不好的写法  
+condition ? doSomething():do somethingElse();  
+```
+
+## [15.语句]  
+
+(1)简单语句  
+    每一行包含一条语句，以分号`;`结束  
+(2)返回语句
+    当返回一个值的时候不应当使用圆括号包裹，除非在某些情况下这么做可以让返回值更容易理解。  
+(3)复合语句  
+- 复合语句是大括号括起来的语句列表。 
+- 括起来的语句应当较复合语句多缩进一个层级  
+- 开始的大括号应当在复合语句所在的行尾，结束的大括号应当独占一行且同复合语句的开始保持同样的缩进。
+- 当语句是控制结构的一部分时，诸如if或者for语句，所有的语句都需要大括号括起来，也包括单个语句。  
+- 像if一样的语句开始的关键字，其后应该紧跟一个空格，起始大括号应当在空格之后。  
+
+```js 
+if (condition) {
+    statements
+} else if (condition) {
+    statements
+} else {
+    statements
+}  
+```
+
+```js 
+for (test1; condition; update) {
+    statements
+}  
+for (variable in object) {
+    statements
+}  
+```
+
+Switch下的每个case都应该保持一个缩进，除第一个之外包括default在内的每个case都应该在之前保持一个空行  
+```javascript
+switch (value) {
+    case 1:  
+    /* 抛出错误 */  
+
+    case 2:  
+        doSomething();
+        break;
+
+    case 3:
+        return true;
+
+    default:  
+        throw new Error(this should not happen);
+}  
+```
+
+## [16.参考文档](#reference)
 - [hiwanz/javascript-style-reference](https://github.com/hiwanz/javascript-style-reference)
 
 - [http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
