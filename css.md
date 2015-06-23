@@ -39,7 +39,7 @@
 - Positioning---位置
 - Box model-----盒模型
 - Typographic---排版
-- Visual---------
+- Visual--------外观
 
 参考规范代码：
 ```css
