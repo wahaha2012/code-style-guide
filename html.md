@@ -119,35 +119,20 @@ HTML标签是构造规范内容结构的关键。例如 `<em>` 标签用来强�
 <a href="javascript:;" title="go away">go away</a>
 ```
 
-
-### 2.7 不要滥用`<br/>`
-
-```html
-<!-- bad -->
-<span>abcde</span>
-<br/>
-<em>def</em>
-
-<!-- good -->
-<p>
-Here's an interesting fact about corn
-</p>
-```
-
-### 2.8 IE兼容模式
+### 2.7 IE兼容模式
 ```html
 <!--推荐-->
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
-### 2.9 对于Boolean类型的标签属性，可以不用赋值
+### 2.8 对于Boolean类型的标签属性，可以不用赋值
 ```html
 <!--推荐-->
 <input type="checkbox" name="" id="" checked>
 checked属性可以不用写checked="checked"
 ```
 
-### 2.10 标签嵌套规范
+### 2.9 标签嵌套规范
 1) 块元素可以包含内联元素或某些块元素, 但内联元素却不能包含块元素, 它只能包含其它的内联元素
 ```html
 <!--good-->
