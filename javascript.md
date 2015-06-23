@@ -261,7 +261,7 @@ var value = condition ? value1 : value2;
 condition ? doSomething():do somethingElse();  
 ```
 
-## [15.语句]  
+## [15.语句](#statement)  
 
 (1)简单语句  
     每一行包含一条语句，以分号`;`结束  
